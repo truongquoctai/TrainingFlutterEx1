@@ -63,8 +63,6 @@ class _SignupScreen extends State<SignupScreen> {
                     'assets/images/logo.png',
                   ),
                 ),
-
-                // const SizedBox(height: 20),
                 const Text(
                   'Find and Meet people around\nyou to find LOVE',
                   textAlign: TextAlign.center,
@@ -74,7 +72,6 @@ class _SignupScreen extends State<SignupScreen> {
                       fontWeight: FontWeight.w300
                   ),
                 ),
-                // const SizedBox(height: 30),
                 const Spacer(),
                 Padding(
                     padding: const EdgeInsets.only(
@@ -94,10 +91,51 @@ class _SignupScreen extends State<SignupScreen> {
                             )
                         ),
                         onPressed: loginWithFaceBook,
-                        icon: Image.asset(
-                          'assets/images/icon-facebook.png',
-                          height: 30,
-                          width: 30,
+                        icon: Padding(
+                          padding: const EdgeInsets.only(
+                            left: 0,
+                            right: 10
+                        ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              ShaderMask(
+                                shaderCallback: (Rect bound) {
+                                  return const LinearGradient(
+                                      colors: [
+                                        Colors.orange,
+                                        Colors.pink
+                                      ],
+                                      begin: Alignment.topCenter,
+                                      end: Alignment.bottomCenter
+                                  ).createShader(bound);
+                                },
+                                blendMode: BlendMode.srcATop,
+                                child: Image.asset(
+                                  'assets/images/icon-facebook.png',
+                                  height: 30,
+                                  width: 30,
+                                ),
+                              ),
+                              Column(
+                                children: [
+                                  const SizedBox(height: 1.5),
+                                  GradientText(
+                                    '|',
+                                    style: const TextStyle(
+                                        fontSize: 30.0,
+                                        fontWeight: FontWeight.w200
+                                    ),
+                                    colors: const [
+                                      Colors.orange,
+                                      Colors.pink,
+                                    ],
+                                    gradientDirection: GradientDirection.ttb,
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                         label: GradientText(
                           'Sign in with Facebook',
@@ -132,11 +170,52 @@ class _SignupScreen extends State<SignupScreen> {
                                 )
                             )
                         ),
-                        onPressed: signup,
-                        icon: Image.asset(
-                          'assets/images/icon-twitter.png',
-                          height: 30,
-                          width: 30,
+                        onPressed: loginWithTwitter,
+                        icon: Padding(
+                          padding: const EdgeInsets.only(
+                              left: 0,
+                              right: 25
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              ShaderMask(
+                                shaderCallback: (Rect bound) {
+                                    return const LinearGradient(
+                                        colors: [
+                                          Colors.orange,
+                                          Colors.pink
+                                        ],
+                                      begin: Alignment.topCenter,
+                                      end: Alignment.bottomCenter
+                                    ).createShader(bound);
+                                  },
+                                blendMode: BlendMode.srcATop,
+                                child: Image.asset(
+                                  'assets/images/icon-twitter.png',
+                                  height: 30,
+                                  width: 30,
+                                ),
+                              ),
+                              Column(
+                                children: [
+                                  const SizedBox(height: 1.5),
+                                  GradientText(
+                                    '|',
+                                    style: const TextStyle(
+                                        fontSize: 30.0,
+                                        fontWeight: FontWeight.w200
+                                    ),
+                                    colors: const [
+                                      Colors.orange,
+                                      Colors.pink,
+                                    ],
+                                    gradientDirection: GradientDirection.ttb,
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                         label: GradientText(
                           'Sign in with Twitter',

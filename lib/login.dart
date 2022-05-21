@@ -16,7 +16,7 @@ class _LoginScreen extends State<LoginScreen> {
   String password = "";
 
   void login() {
-    debugPrint("Login with: userName = $email & pass = $password");
+    debugPrint("Login with: userName = $email & pass = $password | savePass = $isCheckedSavePass");
   }
 
   void loginWithFaceBook() {
